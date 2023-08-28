@@ -15,13 +15,7 @@ const postRoutes = require("./src/routes/post.route");
 const app = express();
 // middlewares
 app.use(express.json());
-app.use(
-  cors({
-    credentials: true,
-    origin: ORIGIN,
-    optionsSuccessStatus: 200,
-  })
-);
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.status(200).json({
